@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ url_for('static',filename='image/favicon.ico') }}" type="image/x-icon"/>
+    <title>运营平台</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+    <script src="{{ url_for('static',filename='js/jquery-3.7.0.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/javascript.js') }}"></script>
+</head>
+<body class="d-flex flex-column h-100">
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="{{ url_for('static',filename='image/logo.png') }}" alt="Logo" width="32" height="32" class="d-inline-block align-text-top">
+                运营平台
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/item1">条目1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/item2">条目2</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <a class="btn btn-primary me-2" href="/logout">登出</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- 页面内容 -->
+<main role="main" class="flex-shrink-0 mt-4">
+
+</main>
+
+<!-- 底部页脚 -->
+<footer class="footer mt-auto py-3">
+    <div class="container-fluid">
+        <span class="text-muted">&copy; Copyright by ikiwi 2023</span>
+    </div>
+</footer>
+</body>
+</html>

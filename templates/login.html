@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ url_for('static',filename='image/favicon.ico') }}" type="image/x-icon"/>
+    <title>授权登录</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+    <script src="{{ url_for('static',filename='js/jquery-3.7.0.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/crypto-js.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/javascript.js') }}"></script>
+</head>
+<body class="d-flex flex-column h-100">
+<header></header>
+
+<main class="form-login w-100 m-auto text-center">
+  <form action="/login" id="loginForm" method="post">
+    <img class="mb-3" src="{{ url_for('static',filename='image/logo.png') }}" alt="" width="192" height="192">
+    <h1 class="h3 mb-4 fw-normal">欢迎来到运营平台</h1>
+    <div class="form-floating">
+      <input type="password" name="hash" class="form-control" id="floatingPassword" placeholder="请输入密码" autofocus required>
+        {% if error %}
+        <label for="floatingPassword" style="color: red;">{{ error }}</label>
+        {% else %}
+        <label for="floatingPassword">请输入密码</label>
+        {% endif %}
+    </div>
+    <button onclick="login()" class="w-100 btn btn-lg btn-primary">登录</button>
+    <script>
+      function login() {
+        const password = document.getElementById('floatingPassword').value;
+        document.getElementById('floatingPassword').value = CryptoJS.SHA256(password).toString();
+        document.getElementById('loginForm').submit();
+      }
+    </script>
+  </form>
+</main>
+  </body>
+</html>
