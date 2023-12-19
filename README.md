@@ -29,7 +29,7 @@
 
 安装依赖的python库
 ```sh
-pip install flask requests aiohttp asyncio flask_jwt_extended
+pip install flask flask_jwt_extended
 ```
 
 直接运行

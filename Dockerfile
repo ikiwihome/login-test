@@ -26,8 +26,8 @@ ENV LANG=zh_CN.UTF-8 \
 
 COPY . .
 
-# 安装flask、requests、aiohttp、asyncio、flask_jwt_extended等Python库
-RUN pip install flask requests aiohttp asyncio flask_jwt_extended
+# 安装flask、flask_jwt_extended等Python库
+RUN pip install flask flask_jwt_extended
 
 # 删除pip缓存
 RUN rm -rf pip && pip cache purge
